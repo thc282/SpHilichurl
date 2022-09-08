@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(248, 241, 226);
+}
+
+* {
+    font-family: Georgia, serif;
+    color: #333;
+}
+
+#title{
+    width: fit-content;
+    margin: 1em auto;
+    font-size: 2rem;
+}
+
+@media only screen and (min-width: 769px){
+    .left {
+        display: inline-block;
+        width: 45%;
+    }
+}
