@@ -2,6 +2,16 @@ body {
     background-color: rgb(248, 241, 226);
 }
 
+a{
+    text-decoration: none;
+}
+
+footer, footer>a{
+    margin-top: 10pt;
+    text-align: right;
+    text-decoration:none;
+}
+
 *,*:before, *:hover:before{
     cursor: url('../src/genshin24.cur'), default;
     font-family: Georgia, serif;
@@ -21,9 +31,74 @@ body {
     justify-content: space-around;
 }
 
-.wrapper>div {
-    vertical-align: middle;
+#intro{
+    font-size: 20pt;
+    font-weight: bold;
+    display: flex;
 }
+
+.marker{
+    color: red;
+    font-weight: bold;
+}
+
+/*Start of table setting*/
+table.wikitable {
+    width: auto;
+    border: 1px solid #bdbdbd;
+    margin: 10px 0px 0px 0px;
+    font-family: SourceHanSansCN;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.gw-table-kd {
+    width: 100% !important;
+}
+
+.center{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.boxright {
+    width: 300px !important;
+    float: middle;
+    justify-self: center;
+    margin: 0px auto 15px auto !important;
+}
+
+/*table row setting*/
+table.wikitable > tr, table.wikitable > * > tr {
+    border: 1px solid #bdbdbd;
+}
+table.wikitable > * > tr > th{
+    width: 80pt;
+}
+/*table border setting*/
+table.wikitable > tr > th, table.wikitable > tr > td, table.wikitable > * > tr > th, table.wikitable > * > tr > td {
+    padding: 5px;
+    border: 1px solid #bdbdbd;
+    color: #4a4a4a;
+}
+/*table header setting*/
+table.wikitable > tr > th, table.wikitable > * > tr > th {
+    background: #ede1cacc;
+    height: auto;
+    border-right: 1px solid #bdbdbd;
+}
+/*table data setting*/
+table.wikitable > tr > td, table.wikitable > * > tr > td {
+    background: #f6f1e7cc;
+    height: auto;
+    border-right: 1px solid #bdbdbd;
+}
+/*End of table setting*/
 
 @media only screen and (max-width: 600px){
     body, body .wrapper{
@@ -43,25 +118,31 @@ body {
 }
 
 /*Button style*/
+.btn{
+    width: fit-content;
+}
+
 .btn a{
     position:relative;
+	display:flex;
     top:0;
     left:0;
+	padding:5px 0px;
+    padding-right: 20pt;
+    column-gap: 20pt;
+    align-items: center;
+    justify-content: space-between;
     min-width: 90pt;
 	box-shadow: 0px 0px 4px 1px #6c775f;
 	background-color:#ece5d8;
 	border-radius:27px;
-	display:flex;
 	cursor:pointer;
 	color:#3b4255;
 	font-family:Arial;
 	font-size:20px;
-	padding:5px 0px;
-    padding-right: 40px;
-    align-items: center;
-    justify-content: space-around;
 	font-weight: 600;
 	text-shadow:0px 0px 0px #3b4255;
+    text-decoration: none;
 }
 
 .btn a:before{
@@ -71,7 +152,7 @@ body {
     left: -1px;
     width:98%;
     min-width: 90pt;
-    height:98%;
+    height:96%;
 	border-radius:27px;
     border:3px solid #ffffff;
     opacity: 0;
@@ -91,6 +172,5 @@ body {
     width: 22pt;
     height: 22pt;
     background-size: 22pt 22pt;
-    margin-right: 25pt;
     margin-left: 5pt;
 }
