@@ -1,16 +1,35 @@
 body {
     background-color: rgb(248, 241, 226);
+    margin: 0;
 }
 
 a{
     text-decoration: none;
 }
 
-footer, footer>a{
-    margin-top: 10pt;
-    text-align: right;
+#footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem 3rem;
+    text-align: left;
     text-decoration:none;
 }
+
+.center{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+.left{
+    text-align: left;
+    margin: auto;
+}
+.right{
+    text-align: right;
+    margin: auto;
+}
+
 
 *,*:before, *:hover:before{
     cursor: url('../src/genshin24.cur'), default;
@@ -19,28 +38,210 @@ footer, footer>a{
 }
 
 #title{
-    width: 100%;
-    text-align: center;
-    margin: 1em auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    align-items: center;
+    text-align: left;
+    padding: 10pt;
+    padding-left: 30pt;
+    margin-bottom: 1rem;
     font-size: 2rem;
 }
 
-.wrapper{
+/*loc wrapper setting*/
+.wrapper.loc{
     display: flex;
-    margin: 0 auto;
+    margin: 0 15pt;
+    justify-content: flex-start;
+    column-gap: 12pt;
+}
+
+.wrapper.loc.frame, #locSltbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-content: flex-start;
+    font-size: 20pt;
+}
+
+.wrapper.loc.frame > div, .wrapper.loc.frame #locSltbox > div{
+    color: white;
+}
+
+.wrapper.loc.frame > div{
+    width: 100%;
+    text-align: center;
+}
+
+#locName{
+    text-align: center;
+}
+
+#locMedia{
+    margin-top: 4rem;
+    overflow: hidden;
+    display: inline-flex;
+    column-gap: 10%;
+}
+
+#locMedia>img, #locMedia>video{
+    height: inherit;
+    width: inherit;
+    object-fit: contain;
+    flex: none;
+}
+
+/*swipe animation*/
+*.swipeL{
+    transform: translateX(-110%);
+}
+*.swipeR{
+    transform: translateX(110%);
+}
+*.swipe2L{
+    transform: translateX(-210%);
+}
+*.nextimg{
+    transform: translateX(210%);
+    visibility: hidden;
+}
+*.previmg{
+    transform: translateX(-210%);
+    visibility: hidden;
+}
+.animated {
+    -webkit-animation-duration: 100ms;animation-duration: 100ms;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+}
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+*.fadeOut{
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+*.fadeIn{
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+#st.nextimg, #nd.nextimg, #st.previmg, #nd.previmg{
+    transition: transform 0s;
+}
+#st, #nd{
+    transition: transform 400ms ease-in-out;
+}
+/*End of swpie animation*/
+
+#locDesc{
+    margin-top: 3rem;
+}
+
+#locSltBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+    margin-top: 4rem;
+}
+
+#locSltbox .btn > a{
+    justify-content: center;
+    height: 2rem;
+    width: 8rem;
+    font-size: 14pt;
+}
+
+#locSltbox .btn a.change, #pre>.btn>a.top, #nextup>.btn>a.end{
+    background-color: transparent;
+}
+
+.top>span, .end>span{
+    color: #ece5d8;
+}
+
+#cur{
+    margin: auto 10pt;
+}
+/*End of loc wrapper*/
+
+/*index wrapper setting*/
+.wrapper.main{
+    display: flex;
+    flex-direction: row;
+    margin-top:5rem ;
     justify-content: space-around;
 }
 
+/*desc wrapper setting*/
+.wrapper.desc{
+    display: flex;
+    flex-direction: column;
+    margin: 0 15pt;
+    justify-content: space-around;
+}
+
+.wrapper.desc * {
+    font-size: 1.5rem;
+}
+
+/*location left nav setting*/
+.wrapper > nav.left{
+    min-width: 220px;
+    overflow: auto;
+    padding: 0 10pt;
+}
+.wrapper > nav.left::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+/* Track */
+.wrapper > nav.left::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #ece5d899;
+    border-width: 2px; 
+    border-radius: 10px;
+}
+/* Handle */
+.wrapper > nav.left::-webkit-scrollbar-thumb {
+    background: #b4b3b2ff;
+    border-radius: 10px;
+}
+/* Handle on hover */
+.wrapper > nav.left::-webkit-scrollbar-thumb:hover {
+    background: #ece5d8; 
+}
+/*End of left nav setting*/
+
+.wrapper > div.right.middle{
+    margin: 10pt;
+    width: 100%;
+}
+
+.wrapper > .middle, .wrapper > .middle > div{
+    text-align: center;
+    margin:10pt auto;
+}
+
 #intro{
-    font-size: 20pt;
+    font-size: 2rem ;
     font-weight: bold;
     display: flex;
+    margin-bottom: 1rem;
 }
 
 .marker{
     color: red;
     font-weight: bold;
 }
+
+
 
 /*Start of table setting*/
 table.wikitable {
@@ -60,15 +261,7 @@ tbody {
     width: 100% !important;
 }
 
-.center{
-    width: 100%;
-    text-align: center;
-    margin: auto;
-}
-
 .boxright {
-    width: 300px !important;
-    float: middle;
     justify-self: center;
     margin: 0px auto 15px auto !important;
 }
@@ -100,37 +293,37 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
 }
 /*End of table setting*/
 
-@media only screen and (max-width: 600px){
-    body, body .wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .wrapper {
-        display: flex;
-        margin: 5px;
-        row-gap: 15pt;
-        
-        width: 100%;
-        max-width: 80em;
-    }
-}
 
 /*Button style*/
 .btn{
-    width: fit-content;
+    width: 10rem;
 }
 
 .btn a{
     position:relative;
-	display:flex;
+    display: flex;
+    text-align: center;
+    height: 2.3rem;
+    align-items: center;
+    box-shadow: 0px 0px 4px 1px #6c775f;
+    background-color: #ece5d8;
+    border-radius: 27px;
+    cursor: pointer;
+    color: #3b4255;
+    font-family: Arial;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 0px 0px 0px #3b4255;
+    text-decoration: none;
+	/*display:flex;
     top:0;
     left:0;
 	padding:5px 0px;
     padding-right: 20pt;
     column-gap: 20pt;
     align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     justify-content: space-between;
     min-width: 90pt;
 	box-shadow: 0px 0px 4px 1px #6c775f;
@@ -142,7 +335,7 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
 	font-size:20px;
 	font-weight: 600;
 	text-shadow:0px 0px 0px #3b4255;
-    text-decoration: none;
+    text-decoration: none;*/
 }
 
 .btn a:before{
@@ -150,11 +343,12 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
     position:absolute;
     top: auto;
     left: -1px;
-    width:98%;
-    min-width: 90pt;
-    height:96%;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: -webkit-fill-available;
+    height: -moz-available;
 	border-radius:27px;
-    border:3px solid #ffffff;
+    border:3px solid #fff;
     opacity: 0;
     transition: .2s;
     z-index: 2;
@@ -164,13 +358,351 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
     opacity: 1;
 }
 
+.btn a span{
+    width: 100%;
+}
+
 .btn_img{
-    background-image: url('../src/btn.png');
-    background-repeat: no-repeat;
-    background-color: Transparent;
-    border:none;
-    width: 22pt;
-    height: 22pt;
-    background-size: 22pt 22pt;
+    width: 1em;
+    height: 1em;
     margin-left: 5pt;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*location button setting*/
+.btn_loc button{
+    background-color: #263240;
+    color: #ece5d8;
+    position:relative;
+	display:flex;
+    top:0;
+    left:0;
+    height: 4rem;
+    margin: auto 10pt;
+    padding-left: 10pt;
+	justify-content: left;
+    align-items: center;
+    min-width: calc(100% - 2rem);
+	box-shadow: inset 0px 0px 2px 1px #37414e;
+	cursor:pointer;
+	font-family:Arial;
+	font-size:20px;
+	font-weight: 600;
+	text-shadow:0px 0px 0px #3b4255;
+    text-decoration: none;
+}
+
+.btn_loc button:before{
+    content:'';
+    position:absolute;
+    left: -2px;
+    width:100%;
+    min-width: 90pt;
+    height:100%;
+}
+
+.btn_loc.active button:before, .btn_loc button:hover:before{
+    animation-name: pulsingBorder;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulsingBorder {
+    0% {
+        border: 2px solid #ffe6b2;
+    }
+    20% {
+        border: 2px solid #ffe6b2;
+        opacity: 100%;
+    }
+    50% {
+        border: 2px solid #ffe6b2;
+        opacity: 0%;
+    }
+    80% {
+        border: 2px solid #ffe6b2;
+        opacity: 100%;
+    }
+    100% {
+        border: 2px solid #ffe6b2;
+    }
+}
+
+@keyframes pulsingBorder2560 {
+    0% {
+        border: 8px solid #ffe6b2;
+    }
+    20% {
+        border: 8px solid #ffe6b2;
+        opacity: 100%;
+    }
+    50% {
+        border: 8px solid #ffe6b2;
+        opacity: 0%;
+    }
+    80% {
+        border: 8px solid #ffe6b2;
+        opacity: 100%;
+    }
+    100% {
+        border: 8px solid #ffe6b2;
+    }
+}
+
+.btn_loc.active button, .btn_loc button:hover{
+    color: #263240;
+    background-color: #ece5d8;
+    transform: scale(1.1);
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+}
+
+@media only screen and (max-width: 600px){
+    body, body .wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #intro{
+        font-size: 1.7rem;
+    }
+
+    .wrapper {
+        max-width: 80em;
+    }
+
+    .wrapper.main{
+        row-gap: 5rem;
+        flex-direction: column;
+    }
+
+    .wrapper.desc * {
+        font-size: 0.9rem;
+    }
+
+    .wrapper.desc .btn, .wrapper.desc .btn span{
+        font-size: 1.1rem;
+        width: 9rem !important;
+    }
+
+    .wrapper.desc .btn a {
+        height: 1.8rem;
+    }
+
+    .btn_img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .wrapper.loc.frame, .right.middle, #locName{
+        margin-top: 0;
+    }
+
+    #title{
+        margin-bottom: 10pt;
+        padding: 10pt;
+        width: -moz-available;          
+        width: -webkit-fill-available;
+        text-align: center;
+        font-size: calc(2rem - 6pt);
+    }
+
+    .left.middle{
+        display: inline-flex;
+        padding: 0 !important;
+        margin-bottom: 0;
+    }
+
+    .left.middle>div{
+        width: -moz-available;          
+        width: -webkit-fill-available;
+        flex: none;
+        padding: 0 10pt;
+    }
+
+    #locMedia, #locDesc{
+        margin-top: 2rem;
+    }
+
+    #locName{
+        margin-top: 0;
+    }
+
+    #locSltbox .btn, #locSltbox .btn >a{
+        height: 1.5rem;
+        width: 6rem;
+        font-size: 12pt;
+    }
+
+}
+
+@media only screen and (min-width: 1024px){
+    #title a{
+        font-size: 4rem;
+    }
+
+    #intro{
+        font-size: 3rem !important;
+    }
+    
+    #loc *{
+        font-size: 30pt;
+    }
+
+    #desc *, #main *{
+        font-size: 2.2rem;
+    }
+
+    .wrapper > nav.left {
+        flex: 2;
+    }
+    
+    .wrapper > div.right.middle {
+        flex: 4;
+    }
+
+    .wrapper.main .btn, .wrapper.desc .btn, .wrapper.main .btn span, .wrapper.desc .btn span{
+        width: 15rem !important;
+    }
+
+    .wrapper.main .btn a, .wrapper.desc .btn a {
+        height: 3.2rem;
+    }
+
+    .btn a span{
+        width: 100%;
+        font-size: 2rem;
+    }
+    
+    .btn_img {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        padding-left: 0.1rem;
+    }
+
+    /*Image setting*/
+    #desc img{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    #img-wei{
+        width: 8.5rem !important;
+        height: 8.5rem !important;
+    }
+    /*End of img setting*/
+
+    .btn_loc button{
+        margin: 25pt auto;
+        height: calc(4rem + 10%);
+    }
+
+    #locSltbox{
+        margin-top: 10rem;
+    }
+
+    #locSltbox .btn, #locSltbox .btn >a {
+        height: 3.1rem;
+        width: 12rem;
+        border-radius: 2rem;
+    }
+
+    #locSltbox .btn > a span{
+        font-size: 2rem ;
+    }    
+
+    table.wikitable > * > tr > th {
+        width: 12rem;
+    }
+
+    table.wikitable > tr > td, table.wikitable > * > tr > td {
+       padding-left: 1rem;
+    }
+}
+
+@media only screen and (min-width: 2560px){
+    #title a{
+        font-size: 8rem ;
+    }
+
+    #intro{
+        font-size: 7rem !important;
+    }
+
+    #loc *{
+        font-size: 60pt ;
+    }
+
+    #desc *, #main *{
+        font-size: 5rem ;
+    }
+
+    .wrapper.main .btn, .wrapper.desc .btn, .wrapper.main .btn span, .wrapper.desc .btn span{
+        width: 36rem !important;
+    }
+
+    .wrapper.main .btn a, .wrapper.desc .btn a {
+        height: 7.2rem;
+    }
+
+    .btn_img {
+        width: 5.5rem !important;
+        height: 5.5rem !important;
+        padding-left: 1.1rem;
+    }
+
+    /*Image setting*/
+    #desc img{
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+    #img-wei{
+        width: 17.5rem !important;
+        height: 17.5rem !important;
+    }
+    /*End of img setting*/
+
+    #locSltbox .btn, #locSltbox .btn >a {
+        height: 6.4rem;
+        width: 24rem;
+        border-radius: 4rem;
+    }
+
+    .btn_loc button{
+        height: calc(4rem + 20%);
+        margin: 50pt auto;
+        padding-left: 45pt;
+        min-width: calc(100% - 6rem);
+    }
+
+    .btn > a,.btn > a:before{
+        min-width: 280pt !important;
+        border-radius: 65px;
+    }
+    .btn > a:before{
+        border: 8px solid #fff !important;
+    }
+
+    .btn_loc button:before{
+        left: -8px;
+    }
+
+    .btn_loc.active button:before, .btn_loc button:hover:before{
+        animation-name: pulsingBorder2560;
+    }
+
+    #locSltbox .btn > a span{
+        font-size: 4rem ;
+    }
+
+    table.wikitable > * > tr > th {
+        width: 34rem;
+    }
+
+    table.wikitable > tr > td, table.wikitable > * > tr > td {
+        padding-left: 3rem;
+    }
 }
