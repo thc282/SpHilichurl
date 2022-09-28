@@ -80,7 +80,7 @@ a{
     margin-top: 4rem;
     overflow: hidden;
     display: inline-flex;
-    column-gap: 10%;
+    column-gap: 5%;
 }
 
 #locMedia>img, #locMedia>video{
