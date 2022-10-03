@@ -83,7 +83,7 @@ a{
 }
 
 #locMedia>img, #locMedia>video{
-    height: inherit;
+    height: 18rem;
     width: inherit;
     object-fit: contain;
     flex: none;
@@ -613,13 +613,13 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
     }
 
     #locSltbox .btn, #locSltbox .btn >a {
-        height: 3.1rem;
-        width: 12rem;
+        height: 2.1rem;
+        width: 5rem;
         border-radius: 2rem;
     }
 
     #locSltbox .btn > a span{
-        font-size: 2rem ;
+        font-size: 1.4rem ;
     }    
 
     table.wikitable > * > tr > th {
