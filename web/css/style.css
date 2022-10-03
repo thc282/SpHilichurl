@@ -542,7 +542,7 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
 
 @media only screen and (min-width: 1024px){
     #title a{
-        font-size: 4rem;
+        font-size: 2.3rem;
     }
 
     #intro{
@@ -553,8 +553,16 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
         font-size: 20pt;
     }
 
+    #locMedia {
+        margin-top: 2rem;
+    }
+
+    #locMedia>img, #locMedia>video{
+        height: 22.5rem;
+    }
+
     #desc *, #main *{
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 
     .wrapper > nav.left {
@@ -601,7 +609,7 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
     }
 
     #locSltbox{
-        margin-top: 10rem;
+        margin-top: 3rem;
     }
 
     #locSltbox .btn, #locSltbox .btn >a {
@@ -625,19 +633,23 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
 
 @media only screen and (min-width: 2560px){
     #title a{
-        font-size: 8rem ;
+        font-size: 4.6rem ;
     }
 
     #intro{
-        font-size: 7rem !important;
+        font-size: 5.2rem !important;
     }
 
     #loc *{
-        font-size: 60pt ;
+        font-size: 37pt ;
+    }
+
+    #locSltbox{
+        margin-top: 6rem;
     }
 
     #desc *, #main *{
-        font-size: 5rem ;
+        font-size: 3rem ;
     }
 
     .wrapper.main .btn, .wrapper.desc .btn, .wrapper.main .btn span, .wrapper.desc .btn span{
@@ -663,16 +675,20 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
         width: 17.5rem !important;
         height: 17.5rem !important;
     }
+
+    #locMedia>img, #locMedia>video {
+        height: 32.5rem;
+    }
     /*End of img setting*/
 
     #locSltbox .btn, #locSltbox .btn >a {
-        height: 6.4rem;
+        height: 3.4rem;
         width: 24rem;
         border-radius: 4rem;
     }
 
     .btn_loc button{
-        height: calc(4rem + 20%);
+        height: calc(4rem + 15%);
         margin: 50pt auto;
         padding-left: 45pt;
         min-width: calc(100% - 6rem);
@@ -695,7 +711,7 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
     }
 
     #locSltbox .btn > a span{
-        font-size: 4rem ;
+        font-size: 2rem ;
     }
 
     table.wikitable > * > tr > th {
