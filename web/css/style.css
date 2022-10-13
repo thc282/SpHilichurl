@@ -142,7 +142,7 @@ a{
 #st, #nd{
     transition: transform 400ms ease-in-out;
 }
-/*End of swpie animation*/
+/*End of swipe animation*/
 
 #locDesc{
     margin-top: 1.5rem;
@@ -327,27 +327,6 @@ table.wikitable > tr > td, table.wikitable > * > tr > td {
     font-weight: 600;
     text-shadow: 0px 0px 0px #3b4255;
     text-decoration: none;
-	/*display:flex;
-    top:0;
-    left:0;
-	padding:5px 0px;
-    padding-right: 20pt;
-    column-gap: 20pt;
-    align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    justify-content: space-between;
-    min-width: 90pt;
-	box-shadow: 0px 0px 4px 1px #6c775f;
-	background-color:#ece5d8;
-	border-radius:27px;
-	cursor:pointer;
-	color:#3b4255;
-	font-family:Arial;
-	font-size:20px;
-	font-weight: 600;
-	text-shadow:0px 0px 0px #3b4255;
-    text-decoration: none;*/
 }
 
 .btn a:before{
